@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Haythem Bouzouraa — Innovation & Continuous Improvement Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ms-blue:#0078D4;--ms-blue-dark:#005A9E;--ms-blue-light:#C7E0F4;--ms-blue-xlight:#EFF6FC;
+      --ms-gray-10:#FAF9F8;--ms-gray-20:#F3F2F1;--ms-gray-30:#EDEBE9;--ms-gray-60:#8A8886;
+      --ms-gray-90:#323130;--ms-gray-130:#605E5C;--ms-green:#107C10;--ms-teal:#008272;
+      --ms-orange:#C55A11;--white:#FFFFFF;--ink:#201F1E;--border:#E1DFDD;
+      --shadow:0 2px 8px rgba(0,0,0,.1);--shadow-md:0 4px 16px rgba(0,0,0,.12);--radius:4px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter','Segoe UI',sans-serif;background:#fff;color:var(--ink);font-size:15px;line-height:1.6}
+    ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--ms-gray-20)}::-webkit-scrollbar-thumb{background:var(--ms-blue);border-radius:3px}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;background:var(--ms-blue);display:flex;align-items:center;padding:0 40px;gap:28px;box-shadow:0 2px 8px rgba(0,120,212,.3);transition:box-shadow .3s}
+    .nav-brand{font-size:15px;font-weight:600;color:#fff;text-decoration:none;white-space:nowrap}
+    .nav-divider{width:1px;height:20px;background:rgba(255,255,255,.3);flex-shrink:0}
+    .nav-links{display:flex;gap:2px;flex:1}
+    .nav-links a{font-size:13px;color:rgba(255,255,255,.9);text-decoration:none;padding:6px 12px;border-radius:4px;transition:background .15s}
+    .nav-links a:hover{background:rgba(255,255,255,.15);color:#fff}
+    .nav-cta{font-size:13px;font-weight:600;color:var(--ms-blue);background:#fff;padding:6px 16px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:background .15s;flex-shrink:0}
+    .nav-cta:hover{background:var(--ms-blue-light)}
+
+    /* HERO */
+    #hero{margin-top:52px;background:linear-gradient(135deg,#0078D4 0%,#005A9E 60%,#003F74 100%);padding:70px 80px 0;display:grid;grid-template-columns:1fr auto;align-items:flex-end;gap:40px;min-height:460px;overflow:hidden}
+    .hero-content{padding-bottom:56px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 14px;border-radius:20px;margin-bottom:20px}
+    .hero-badge-dot{width:8px;height:8px;background:#6FCF97;border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .hero-badge span{font-size:12px;color:rgba(255,255,255,.95);font-weight:500;letter-spacing:.04em}
+    .hero-name{font-size:clamp(34px,4vw,56px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:8px;letter-spacing:-.02em}
+    .hero-title{font-size:clamp(15px,2vw,20px);font-weight:300;color:rgba(255,255,255,.85);margin-bottom:24px;line-height:1.4}
+    .hero-title strong{color:#fff;font-weight:600}
+    .hero-desc{font-size:14px;font-weight:300;color:rgba(255,255,255,.75);max-width:560px;line-height:1.8;margin-bottom:32px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-white{font-size:14px;font-weight:600;color:var(--ms-blue);background:#fff;padding:10px 24px;border-radius:4px;text-decoration:none;border:2px solid #fff;transition:all .2s}
+    .btn-white:hover{background:var(--ms-blue-light)}
+    .btn-outline-white{font-size:14px;font-weight:500;color:#fff;background:transparent;padding:10px 24px;border-radius:4px;text-decoration:none;border:2px solid rgba(255,255,255,.6);transition:all .2s}
+    .btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+    .hero-photo-wrap{align-self:flex-end;width:260px;flex-shrink:0}
+    .hero-photo{width:260px;height:300px;object-fit:cover;object-position:center top;display:block;border-radius:6px 6px 0 0;border:3px solid rgba(255,255,255,.3);border-bottom:none;box-shadow:0 -4px 32px rgba(0,0,0,.2)}
+
+    /* STATS BAR */
+    .stats-bar{background:#fff;border-bottom:1px solid var(--border)}
+    .stats-inner{display:flex;border-left:1px solid var(--border);margin:0 80px}
+    .stat-item{flex:1;padding:20px 24px;border-right:1px solid var(--border);display:flex;align-items:center;gap:14px}
+    .stat-icon{font-size:26px}
+    .stat-num{font-size:26px;font-weight:700;color:var(--ms-blue);line-height:1}
+    .stat-label{font-size:12px;color:var(--ms-gray-130);margin-top:3px}
+
+    /* SECTIONS */
+    section{padding:68px 80px}
+    section:nth-child(even){background:var(--ms-gray-10)}
+    .section-header{margin-bottom:44px}
+    .section-tag{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ms-blue);margin-bottom:8px}
+    .section-title{font-size:clamp(26px,3vw,38px);font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.02em}
+    .section-title span{color:var(--ms-blue)}
+    .section-sub{font-size:15px;color:var(--ms-gray-130);margin-top:10px;max-width:600px;font-weight:300}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+    .about-text p{font-size:15px;color:var(--ms-gray-130);line-height:1.8;margin-bottom:14px}
+    .about-text p strong{color:var(--ink);font-weight:600}
+    .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+    .highlight-item{background:var(--ms-blue-xlight);border:1px solid var(--ms-blue-light);border-radius:4px;padding:14px;border-left:3px solid var(--ms-blue)}
+    .highlight-num{font-size:26px;font-weight:700;color:var(--ms-blue);line-height:1}
+    .highlight-label{font-size:12px;color:var(--ms-gray-130);margin-top:3px}
+    .contact-card{background:#fff;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+    .contact-card-header{background:var(--ms-blue);padding:14px 18px;font-size:13px;font-weight:600;color:#fff}
+    .contact-card-body{padding:16px}
+    .contact-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--ms-gray-30)}
+    .contact-row:last-child{border-bottom:none}
+    .contact-icon{font-size:16px;flex-shrink:0}
+    .contact-label{font-size:11px;color:var(--ms-gray-60);text-transform:uppercase;letter-spacing:.06em}
+    .contact-value{font-size:13px;color:var(--ink);font-weight:500;margin-top:2px}
+    .contact-value a{color:var(--ms-blue);text-decoration:none}
+    .available-badge{display:inline-flex;align-items:center;gap:6px;background:#DFF6DD;color:var(--ms-green);padding:4px 10px;border-radius:12px;font-size:12px;font-weight:600;margin-top:12px}
+    .available-dot{width:6px;height:6px;background:var(--ms-green);border-radius:50%}
+
+    /* EDUCATION */
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .edu-card{background:#fff;border:1px solid var(--border);border-radius:4px;padding:22px;transition:box-shadow .2s,transform .2s}
+    .edu-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .edu-card.feat-blue{border-left:4px solid var(--ms-blue);background:var(--ms-blue-xlight)}
+    .edu-card.feat-teal{border-left:4px solid var(--ms-teal);background:#F0FAF9}
+    .edu-card.feat-orange{border-left:4px solid var(--ms-orange);background:#FFF4E6}
+    .edu-card.feat-gray{border-left:4px solid var(--ms-gray-60)}
+    .edu-badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:12px;margin-bottom:10px}
+    .b-blue{background:var(--ms-blue-light);color:var(--ms-blue-dark)}
+    .b-teal{background:#C8F0EC;color:var(--ms-teal)}
+    .b-orange{background:#FCE4CD;color:var(--ms-orange)}
+    .b-gray{background:var(--ms-gray-30);color:var(--ms-gray-90)}
+    .edu-degree{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.3}
+    .edu-school{font-size:13px;color:var(--ms-gray-130);margin-bottom:6px}
+    .edu-period{font-size:12px;color:var(--ms-gray-60)}
+    .edu-mention{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--ms-green);margin-top:6px}
+    .edu-desc{font-size:13px;color:var(--ms-gray-130);margin-top:8px;line-height:1.6}
+    .certs-title{font-size:18px;font-weight:700;color:var(--ink);margin:36px 0 18px;padding-top:12px;border-top:1px solid var(--border)}
+    .certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .cert-card{background:#fff;border:1px solid var(--border);border-radius:4px;padding:14px 16px;display:flex;align-items:flex-start;gap:10px;transition:box-shadow .2s}
+    .cert-card:hover{box-shadow:var(--shadow)}
+    .cert-icon{font-size:20px;flex-shrink:0}
+    .cert-name{font-size:12px;font-weight:600;color:var(--ink);line-height:1.3}
+    .cert-org{font-size:11px;color:var(--ms-gray-130);margin-top:2px}
+    .cert-date{font-size:11px;color:var(--ms-blue);margin-top:3px;font-weight:500}
+
+    /* EXPERIENCE */
+    .timeline-item{display:grid;grid-template-columns:190px 1fr;position:relative}
+    .timeline-left{padding:24px 20px 24px 0;border-right:2px solid var(--border);position:relative;text-align:right}
+    .timeline-left::after{content:'';position:absolute;right:-7px;top:32px;width:12px;height:12px;background:var(--ms-blue);border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 2px var(--ms-blue)}
+    .timeline-item.current .timeline-left::after{background:var(--ms-green);box-shadow:0 0 0 2px var(--ms-green)}
+    .timeline-period{font-size:12px;color:var(--ms-blue);font-weight:600;margin-bottom:4px}
+    .timeline-duration{font-size:11px;color:var(--ms-gray-60)}
+    .timeline-right{padding:24px 0 24px 24px;border-bottom:1px solid var(--ms-gray-30)}
+    .timeline-item:last-child .timeline-right{border-bottom:none}
+    .timeline-role{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
+    .timeline-company{font-size:13px;color:var(--ms-blue);font-weight:600;margin-bottom:10px}
+    .timeline-bullets{list-style:none}
+    .timeline-bullets li{font-size:14px;color:var(--ms-gray-130);padding:3px 0 3px 18px;position:relative;line-height:1.6}
+    .timeline-bullets li::before{content:'›';position:absolute;left:2px;color:var(--ms-blue);font-weight:700;font-size:16px;line-height:1.3}
+    .achievement-tag{display:inline-flex;align-items:center;gap:6px;background:#DFF6DD;color:var(--ms-green);border:1px solid #A9D9A9;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;margin-top:6px}
+    .current-badge{display:inline-flex;align-items:center;gap:4px;background:var(--ms-blue-light);color:var(--ms-blue-dark);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;margin-left:8px;vertical-align:middle}
+
+    /* SKILLS */
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill-group{background:#fff;border:1px solid var(--border);border-radius:4px;padding:22px;border-top:3px solid var(--ms-blue)}
+    .skill-group.teal{border-top-color:var(--ms-teal)}.skill-group.orange{border-top-color:var(--ms-orange)}
+    .skill-group.green{border-top-color:var(--ms-green)}.skill-group.purple{border-top-color:#6264A7}
+    .skill-group.red{border-top-color:#D13438}
+    .skill-group-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .skill-pills{display:flex;flex-wrap:wrap;gap:7px}
+    .sp{font-size:12px;font-weight:500;padding:4px 11px;border-radius:14px;background:var(--ms-gray-20);color:var(--ms-gray-90);border:1px solid var(--border)}
+    .sp.b{background:var(--ms-blue-xlight);color:var(--ms-blue-dark);border-color:var(--ms-blue-light)}
+    .sp.t{background:#EAF9F7;color:var(--ms-teal);border-color:#C8F0EC}
+    .sp.o{background:#FFF4E6;color:var(--ms-orange);border-color:#FCE4CD}
+    .sp.g{background:#DFF6DD;color:var(--ms-green);border-color:#A9D9A9}
+    .sp.p{background:#F0F0FF;color:#6264A7;border-color:#C8C8F0}
+    .lang-grid{display:flex;gap:14px;margin-top:28px}
+    .lang-card{flex:1;background:#fff;border:1px solid var(--border);border-radius:4px;padding:18px;text-align:center}
+    .lang-flag{font-size:26px;margin-bottom:6px}
+    .lang-name{font-size:14px;font-weight:700;color:var(--ink)}
+    .lang-level{font-size:12px;color:var(--ms-gray-130);margin-top:3px}
+    .lang-bar-wrap{background:var(--ms-gray-30);border-radius:3px;height:4px;margin-top:10px}
+    .lang-bar{height:4px;border-radius:3px;background:var(--ms-blue)}
+
+    /* CONTACT */
+    #contact{background:linear-gradient(135deg,#0078D4 0%,#005A9E 100%);color:#fff}
+    #contact .section-tag{color:rgba(255,255,255,.7)}
+    #contact .section-title{color:#fff}
+    #contact .section-title span{color:var(--ms-blue-light)}
+    #contact .section-sub{color:rgba(255,255,255,.7)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .contact-info p{font-size:15px;color:rgba(255,255,255,.8);line-height:1.8;margin-bottom:24px;font-weight:300}
+    .contact-info-items{display:flex;flex-direction:column;gap:12px}
+    .contact-info-row{display:flex;align-items:center;gap:14px;padding:12px 14px;background:rgba(255,255,255,.1);border-radius:4px;border:1px solid rgba(255,255,255,.15)}
+    .ci-icon{font-size:18px}
+    .ci-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.06em}
+    .ci-value{font-size:14px;color:#fff;font-weight:500}
+    .ci-value a{color:#fff;text-decoration:none}
+    .contact-form{background:#fff;border-radius:4px;padding:28px}
+    .form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+    .form-group label{font-size:12px;font-weight:600;color:var(--ms-gray-90);letter-spacing:.04em}
+    .form-group input,.form-group textarea{font-family:'Inter',sans-serif;font-size:14px;border:1px solid var(--border);border-radius:4px;padding:9px 11px;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
+    .form-group input:focus,.form-group textarea:focus{border-color:var(--ms-blue);box-shadow:0 0 0 3px rgba(0,120,212,.15)}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .btn-blue{font-size:14px;font-weight:600;color:#fff;background:var(--ms-blue);padding:11px 24px;border:none;border-radius:4px;cursor:pointer;transition:background .15s;width:100%}
+    .btn-blue:hover{background:var(--ms-blue-dark)}
+    #formMsg{font-size:13px;font-weight:600;color:var(--ms-green);margin-top:10px;display:none}
+
+    /* FOOTER */
+    footer{background:#201F1E;color:rgba(255,255,255,.5);padding:20px 80px;display:flex;align-items:center;justify-content:space-between;font-size:12px}
+    footer a{color:rgba(255,255,255,.5);text-decoration:none}
+    footer a:hover{color:rgba(255,255,255,.9)}
+    .footer-brand{font-size:14px;font-weight:600;color:rgba(255,255,255,.8)}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:1024px){
+      nav{padding:0 16px;gap:12px}.nav-links{display:none}
+      #hero{padding:60px 28px 0;grid-template-columns:1fr}.hero-photo-wrap{display:none}
+      .stats-inner{margin:0 28px;flex-wrap:wrap}.stat-item{min-width:50%}
+      section{padding:52px 28px}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .edu-grid,.certs-grid,.skills-grid{grid-template-columns:1fr 1fr}
+      footer{padding:18px 28px;flex-direction:column;gap:6px;text-align:center}
+    }
+    @media(max-width:600px){
+      .edu-grid,.certs-grid,.skills-grid,.about-highlights{grid-template-columns:1fr}
+      .form-row{grid-template-columns:1fr}.lang-grid{flex-wrap:wrap}.stat-item{min-width:100%}
+      .timeline-item{grid-template-columns:1fr}
+      .timeline-left{border-right:none;border-bottom:1px solid var(--border);text-align:left;padding:12px 0}
+      .timeline-left::after{display:none}.timeline-right{padding:12px 0 20px}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-brand">Haythem Bouzouraa</a>
+  <div class="nav-divider"></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="mailto:haythem.tuni3@gmail.com" class="nav-cta">✉ Contact Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Immediately Available · Open to Opportunities in Canada 🍁</span>
+    </div>
+    <h1 class="hero-name">Haythem Bouzouraa</h1>
+    <p class="hero-title">
+      <strong>Innovation & Continuous Improvement Specialist</strong><br>
+      Automated Production Engineering
+    </p>
+    <p class="hero-desc">
+      QSE & Innovation expert with 14 years of experience managing integrated quality systems
+      (ISO 9001 · 14001 · 45001). Holder of two Master's degrees (QSE Management & Innovation
+      Management) and a dual IT background (Bachelor's in Information Systems Development +
+      Master's in Information Systems Security in progress). Certified Cisco CCNA, DevNet Associate
+      and Six Sigma. I turn regulatory constraints into sustainable growth drivers.
+    </p>
+    <div class="hero-actions">
+      <a href="#experience" class="btn-white">View My Experience</a>
+      <a href="#contact" class="btn-outline-white">Get In Touch</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <img class="hero-photo" src="data:image/png;base64,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" alt="Haythem Bouzouraa"/>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal"><div class="stat-icon">📅</div><div><div class="stat-num">14+</div><div class="stat-label">Years of experience</div></div></div>
+    <div class="stat-item reveal"><div class="stat-icon">🏅</div><div><div class="stat-num">4</div><div class="stat-label">University degrees</div></div></div>
+    <div class="stat-item reveal"><div class="stat-icon">📜</div><div><div class="stat-num">10+</div><div class="stat-label">Professional certifications</div></div></div>
+    <div class="stat-item reveal"><div class="stat-icon">📉</div><div><div class="stat-num">−40%</div><div class="stat-label">Non-conformities reduced</div></div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header reveal">
+    <div class="section-tag">About</div>
+    <h2 class="section-title">Professional <span>Profile</span></h2>
+    <p class="section-sub">A rare hybrid profile combining industrial quality management, innovation leadership and digital technology skills.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I am <strong>Haythem Bouzouraa</strong>, a QSE Manager with 14 years of experience leading integrated management systems (ISO 9001, 14001, 45001). I hold a <strong>Master's in QSE Management</strong> and a <strong>Master's in Innovation Management</strong>, having led 3 ISO certifications and reduced non-conformity rates by <strong>40% in 2 years</strong>.</p>
+      <p>My profile is further strengthened by a solid IT background: a <strong>Bachelor's in Information Systems Development (L.DSI)</strong> obtained with Honours, and an ongoing <strong>Master's in Information Systems Security (M.SSII)</strong>. I also hold <strong>Cisco CCNA & DevNet Associate</strong> certifications, giving me a unique cross-disciplinary vision bridging industrial quality, innovation and digital technologies.</p>
+      <p>I am actively seeking a position as <strong>Innovation & Continuous Improvement Specialist</strong> in Canada, to contribute to high-impact automated production engineering projects.</p>
+      <div class="about-highlights">
+        <div class="highlight-item"><div class="highlight-num">3</div><div class="highlight-label">ISO certifications led</div></div>
+        <div class="highlight-item"><div class="highlight-num">−40%</div><div class="highlight-label">Non-conformities in 2 years</div></div>
+        <div class="highlight-item"><div class="highlight-num">+90%</div><div class="highlight-label">Customer satisfaction improved</div></div>
+        <div class="highlight-item"><div class="highlight-num">Bac+5</div><div class="highlight-label">Double Master's degree</div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="contact-card">
+        <div class="contact-card-header">📋 Contact Information</div>
+        <div class="contact-card-body">
+          <div class="contact-row"><div class="contact-icon">📍</div><div><div class="contact-label">Location</div><div class="contact-value">Kalaat Landlous, Ariana — Tunisia</div></div></div>
+          <div class="contact-row"><div class="contact-icon">📞</div><div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+21622876195">+216 22 876 195</a></div></div></div>
+          <div class="contact-row"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:haythem.tuni3@gmail.com">haythem.tuni3@gmail.com</a></div></div></div>
+          <div class="contact-row"><div class="contact-icon">🎓</div><div><div class="contact-label">Education Level</div><div class="contact-value">Bac+5 (Double Master's)</div></div></div>
+          <div class="contact-row"><div class="contact-icon">🚗</div><div><div class="contact-label">Driver's Licence</div><div class="contact-value">Yes</div></div></div>
+          <div class="available-badge"><div class="available-dot"></div>Immediately Available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <div class="section-tag">Academic Background</div>
+    <h2 class="section-title">Key <span>Degrees</span></h2>
+    <p class="section-sub">A solid academic track combining industrial management, innovation and information technology.</p>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card feat-blue reveal">
+      <div class="edu-badge b-blue">⭐ Key Degree</div>
+      <div class="edu-degree">Master's — Quality, Safety & Environment Management (MQSE)</div>
+      <div class="edu-school">🏛 ISET de Charguia, Tunisia</div>
+      <div class="edu-period">📅 September 2017 – October 2019</div>
+      <div class="edu-mention">✅ Honours</div>
+      <div class="edu-desc">Reference training in integrated QSE management, ISO 9001/14001/45001 auditing and certification, and CSR. Directly applicable to a Continuous Improvement Specialist role.</div>
+    </div>
+    <div class="edu-card feat-teal reveal">
+      <div class="edu-badge b-teal">⭐ Key Degree</div>
+      <div class="edu-degree">Master's — Innovation Management</div>
+      <div class="edu-school">🏛 ISET de Kef, Tunisia</div>
+      <div class="edu-period">📅 September 2018 – March 2021</div>
+      <div class="edu-mention">✅ High Honours</div>
+      <div class="edu-desc">Innovation strategies, entrepreneurial thinking and organisational change management. Directly valuable in an industrial innovation role.</div>
+    </div>
+    <div class="edu-card feat-orange reveal">
+      <div class="edu-badge b-orange">🔄 In Progress</div>
+      <div class="edu-degree">Master's — Information Systems & Infrastructure Security (M.SSII)</div>
+      <div class="edu-school">🏛 University Institute, Tunisia</div>
+      <div class="edu-period">📅 September 2024 – July 2026</div>
+      <div class="edu-desc">Cybersecurity and industrial infrastructure protection. Strengthens the digital profile for automated production environments.</div>
+    </div>
+    <div class="edu-card feat-gray reveal">
+      <div class="edu-badge b-gray">💻 IT Degree</div>
+      <div class="edu-degree">Bachelor's — Information Systems Development (L.DSI)</div>
+      <div class="edu-school">🏛 University Institute, Tunisia</div>
+      <div class="edu-period">📅 September 2021 – July 2024</div>
+      <div class="edu-mention">✅ Honours</div>
+      <div class="edu-desc">Software development, databases and information systems. Perfectly complements QSE expertise with hands-on digital tool proficiency.</div>
+    </div>
+  </div>
+
+  <div class="certs-title reveal">🏅 Professional Certifications</div>
+  <div class="certs-grid">
+    <div class="cert-card reveal"><div class="cert-icon">🌐</div><div><div class="cert-name">CCNA — Cisco Certified Network Associate</div><div class="cert-org">ISI Tunis</div><div class="cert-date">2025 · High Honours</div></div></div>
+    <div class="cert-card reveal"><div class="cert-icon">⚙️</div><div><div class="cert-name">DevNet Associate — Network Automation & APIs</div><div class="cert-org">ISI Tunis (Cisco)</div><div class="cert-date">2025 · High Honours</div></div></div>
+    <div class="cert-card reveal"><div class="cert-icon">📊</div><div><div class="cert-name">Six Sigma Principles & Tools</div><div class="cert-org">Coursera / ESSEC Business School</div><div class="cert-date">2020 · High Honours</div></div></div>
+    <div class="cert-card reveal"><div class="cert-icon">🔄</div><div><div class="cert-name">Change Management</div><div class="cert-org">ESSEC Business School</div><div class="cert-date">2020 · High Honours</div></div></div>
+    <div class="cert-card reveal"><div class="cert-icon">🏢</div><div><div class="cert-name">Business Creation & Entrepreneurship (CEFE)</div><div class="cert-org">Espace Entreprendre de Tunis</div><div class="cert-date">2020 · High Honours</div></div></div>
+    <div class="cert-card reveal"><div class="cert-icon">🖥</div><div><div class="cert-name">Microsoft Office Specialist (Word Expert, Excel, PowerPoint)</div><div class="cert-org">Univ. Tunis El Manar / SMARTFUTURE</div><div class="cert-date">2021 · High Honours</div></div></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <div class="section-tag">Work Experience</div>
+    <h2 class="section-title">Professional <span>Journey</span></h2>
+    <p class="section-sub">14 years of hands-on experience in QSE management, ISO certification leadership and continuous improvement.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item current reveal">
+      <div class="timeline-left"><div class="timeline-period">Oct. 2019 – Present</div><div class="timeline-duration">6 years 5 months</div></div>
+      <div class="timeline-right">
+        <div class="timeline-role">Administrative Officer — Civil Service <span class="current-badge">🟢 Current</span></div>
+        <div class="timeline-company">Ministry of Agriculture, Water Resources and Maritime Fisheries · Tunisia</div>
+        <ul class="timeline-bullets">
+          <li>Verified, processed and tracked complex administrative files and official records</li>
+          <li>Drafted and transmitted official correspondence, meeting minutes and activity reports</li>
+          <li>Organised and scheduled inter-departmental meetings; managed executive agendas</li>
+          <li>Applied public accounting and budget management procedures</li>
+          <li>Coordinated cross-functional activities across multiple directorates</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-left"><div class="timeline-period">Dec. 2012 – Sept. 2019</div><div class="timeline-duration">6 years 9 months</div></div>
+      <div class="timeline-right">
+        <div class="timeline-role">QSE Manager — Quality, Safety & Environment</div>
+        <div class="timeline-company">Industrie des Nouvelles Briques · Electro-mechanical industry · Tunisia</div>
+        <ul class="timeline-bullets">
+          <li>Deployed and managed the quality policy in compliance with <strong>ISO 9001, 14001 & 45001</strong></li>
+          <li>Led 3 full-cycle ISO certifications — preparation, audit and renewal</li>
+          <li>Designed and maintained KPI dashboards covering quality, safety and environment</li>
+          <li>Conducted internal and supplier audits; coordinated customer quality auditors on-site</li>
+          <li>Defined and implemented <strong>HSE and CSR action plans</strong></li>
+          <li>Analysed customer satisfaction and drove corrective and preventive action plans</li>
+          <li>Authored annual QSE activity reports; contributed to product and service design cycles</li>
+          <li>Trained and raised staff awareness on quality standards and HSE best practices</li>
+        </ul>
+        <div class="achievement-tag">🏆 −40% non-conformity rate in 2 years · 3 ISO certifications successfully led</div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-left"><div class="timeline-period">Dec. 2011 – Nov. 2012</div><div class="timeline-duration">11 months</div></div>
+      <div class="timeline-right">
+        <div class="timeline-role">QSE Officer — Graduate Internship (SIVP)</div>
+        <div class="timeline-company">Industrie des Nouvelles Briques · Electro-mechanical industry · Tunisia</div>
+        <ul class="timeline-bullets">
+          <li>Set up quality KPI dashboards and analysed internal audit findings</li>
+          <li>Evaluated staff engagement rates across quality improvement initiatives</li>
+          <li>Implemented a post-audit corrective action plan significantly raising customer satisfaction</li>
+          <li>Authored the annual QSE activity report</li>
+        </ul>
+        <div class="achievement-tag">🏆 +90% customer satisfaction through post-audit corrective action plan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <div class="section-tag">Skills</div>
+    <h2 class="section-title">Technical & <span>Transferable Expertise</span></h2>
+    <p class="section-sub">A unique hybrid profile bridging quality management, industrial innovation and digital technologies.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group reveal"><div class="skill-group-title"><span>🎖</span>QSE / Standards</div><div class="skill-pills"><span class="sp b">ISO 9001</span><span class="sp b">ISO 14001</span><span class="sp b">ISO 45001</span><span class="sp b">Internal Auditing</span><span class="sp b">Supplier Auditing</span><span class="sp b">ISO Certification</span><span class="sp b">HSE Plans</span><span class="sp b">CSR</span><span class="sp b">KPI Dashboards</span></div></div>
+    <div class="skill-group teal reveal"><div class="skill-group-title"><span>💡</span>Innovation & Lean</div><div class="skill-pills"><span class="sp t">Lean Management</span><span class="sp t">Six Sigma</span><span class="sp t">DMAIC</span><span class="sp t">Kaizen</span><span class="sp t">FMEA</span><span class="sp t">5S</span><span class="sp t">Change Management</span><span class="sp t">Continuous Improvement</span></div></div>
+    <div class="skill-group orange reveal"><div class="skill-group-title"><span>💻</span>IT & Networks</div><div class="skill-pills"><span class="sp o">Cisco CCNA</span><span class="sp o">DevNet / APIs</span><span class="sp o">Python</span><span class="sp o">Web Development</span><span class="sp o">Databases</span><span class="sp o">Cybersecurity</span><span class="sp o">Network Automation</span></div></div>
+    <div class="skill-group green reveal"><div class="skill-group-title"><span>📊</span>Office & Data</div><div class="skill-pills"><span class="sp g">Excel Expert (MOS)</span><span class="sp g">Word Expert (MOS)</span><span class="sp g">PowerPoint (MOS)</span><span class="sp g">Canva</span><span class="sp g">Data Analysis</span><span class="sp g">Report Writing</span></div></div>
+    <div class="skill-group purple reveal"><div class="skill-group-title"><span>🤝</span>Leadership</div><div class="skill-pills"><span class="sp p">Team Management</span><span class="sp p">Conflict Resolution</span><span class="sp p">Cross-functional Coordination</span><span class="sp p">Quality Facilitation</span><span class="sp p">Time Management</span></div></div>
+    <div class="skill-group red reveal"><div class="skill-group-title"><span>🌱</span>Interests</div><div class="skill-pills"><span class="sp">Environmental volunteering</span><span class="sp">Half-marathon running</span><span class="sp">Handball (team captain)</span><span class="sp">Photography</span><span class="sp">Woodworking</span><span class="sp">Hiking</span></div></div>
+  </div>
+  <div class="lang-grid">
+    <div class="lang-card reveal"><div class="lang-flag">🇫🇷</div><div class="lang-name">French</div><div class="lang-level">Advanced — C1</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:90%"></div></div></div>
+    <div class="lang-card reveal"><div class="lang-flag">🇬🇧</div><div class="lang-name">English</div><div class="lang-level">Intermediate — B1/B2</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:60%"></div></div></div>
+    <div class="lang-card reveal"><div class="lang-flag">🇹🇳</div><div class="lang-name">Arabic</div><div class="lang-level">Native — C2</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <div class="section-tag">Contact</div>
+    <h2 class="section-title">Let's Work <span>Together</span></h2>
+    <p class="section-sub">Have an opportunity in Canada? I am immediately available and ready to contribute to your continuous improvement and industrial innovation projects.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <p>Feel free to reach out directly for any job opportunity, project or consulting mission. I typically respond within 24 hours and am available for a video call at any time.</p>
+      <div class="contact-info-items">
+        <div class="contact-info-row"><div class="ci-icon">✉️</div><div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:haythem.tuni3@gmail.com">haythem.tuni3@gmail.com</a></div></div></div>
+        <div class="contact-info-row"><div class="ci-icon">📞</div><div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:+21622876195">+216 22 876 195</a></div></div></div>
+        <div class="contact-info-row"><div class="ci-icon">📍</div><div><div class="ci-label">Location</div><div class="ci-value">Ariana, Tunisia · Target: Canada 🍁</div></div></div>
+        <div class="contact-info-row"><div class="ci-icon">🕐</div><div><div class="ci-label">Availability</div><div class="ci-value">Immediate · Full-time</div></div></div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <form onsubmit="sendMsg(event)">
+        <div class="form-row">
+          <div class="form-group"><label>Name</label><input type="text" placeholder="Your name" required/></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com" required/></div>
+        </div>
+        <div class="form-group"><label>Company / Organisation</label><input type="text" placeholder="Company name"/></div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Describe the opportunity or your request…" required></textarea></div>
+        <button type="submit" class="btn-blue">📨 Send Message</button>
+        <div id="formMsg">✅ Message sent! I will get back to you within 24 hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Haythem Bouzouraa</div>
+  <span>QSE Expert · Innovation · Continuous Improvement · © 2025</span>
+  <a href="#hero">↑ Back to top</a>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow =
+      window.scrollY > 10 ? '0 4px 16px rgba(0,0,0,.2)' : '0 2px 8px rgba(0,120,212,.3)';
+  });
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  function sendMsg(e) {
+    e.preventDefault();
+    const msg = document.getElementById('formMsg');
+    msg.style.display = 'block';
+    e.target.reset();
+    setTimeout(() => msg.style.display = 'none', 5000);
+  }
+</script>
+</body>
+</html>
